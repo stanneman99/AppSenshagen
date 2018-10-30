@@ -4,9 +4,33 @@ import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
 export default class App extends React.Component {
+  constructor(props)
+  {
+    super(props); 
+
+    this.state=
+    {
+      jsonapi: "",
+    }
+    this.GetWeather();
+
+  }
+
+  GetWeather = async() => {
+    let uri = "https://services1.arcgis.com/3YlK2vfHGZtonb1r/arcgis/rest/services/KNMI_Sensors_Zwolle_(actuele_gegevens)/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
+    let res = await fetch (uri); 
+    let json = await res.json (); 
+    this.setState({
+      jsonapi : json.objectIdFieldName
+    });
+    console.log('dikke ballen ' + this.state.jsonapi); 
+  }
+
+
   state = {
     isLoadingComplete: false,
   };
+  
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
