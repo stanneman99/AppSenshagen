@@ -1,16 +1,16 @@
 {
   "expo": {
     "name": "Sensorhagen",
-    "description": "A very interesting project.",
+    "description": "A app about the weather in Zwolle.",
     "slug": "Sensorhagen",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/cloud.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/cloud.gif",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
