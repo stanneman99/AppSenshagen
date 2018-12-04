@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import MapsScreen from '../screens/MapsScreen';
+import ListScreen from '../screens/ListScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -23,6 +24,7 @@ HomeStack.navigationOptions = {
     />
   ),
 };
+
 const MapsStack = createStackNavigator({
   Maps: MapsScreen,
 });
@@ -36,6 +38,22 @@ MapsStack.navigationOptions = {
     />
   ),
 };
+
+const ListStack = createStackNavigator({
+  List: ListScreen,
+});
+
+ListStack.navigationOptions = {
+  tabBarLabel: 'List',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-list${focused ? '' : '-outline'}` : 'md-list'}
+    />
+  ),
+};
+
+
 const LinksStack = createStackNavigator({
   Links: LinksScreen,
 });
@@ -67,6 +85,7 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator({
   HomeStack,
   MapsStack,
+  ListStack,
   LinksStack,
   SettingsStack,
 });
