@@ -9,11 +9,6 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/cloud.png",
-    "splash": {
-      "image": "./assets/images/cloud.gif",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
