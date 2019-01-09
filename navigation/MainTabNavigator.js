@@ -3,17 +3,17 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
+import WeatherScreen from '../screens/WeatherScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import MapsScreen from '../screens/MapsScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const WeatherStack = createStackNavigator({
+  Weather: WeatherScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+WeatherStack.navigationOptions = {
+  tabBarLabel: 'Weather',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -65,7 +65,7 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
+  WeatherStack,
   MapsStack,
   LinksStack,
   SettingsStack,
