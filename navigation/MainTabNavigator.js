@@ -7,6 +7,7 @@ import WeatherScreen from '../screens/WeatherScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import MapsScreen from '../screens/MapsScreen';
+import ListScreen from '../screens/ListScreen';
 
 const WeatherStack = createStackNavigator({
   Weather: WeatherScreen,
@@ -23,6 +24,7 @@ WeatherStack.navigationOptions = {
     />
   ),
 };
+
 const MapsStack = createStackNavigator({
   Maps: MapsScreen,
 });
@@ -36,6 +38,22 @@ MapsStack.navigationOptions = {
     />
   ),
 };
+
+const ListStack = createStackNavigator({
+  List: ListScreen,
+});
+
+ListStack.navigationOptions = {
+  tabBarLabel: 'List',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-list${focused ? '' : '-outline'}` : 'md-list'}
+    />
+  ),
+};
+
+
 const LinksStack = createStackNavigator({
   Links: LinksScreen,
 });
@@ -67,6 +85,7 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator({
   WeatherStack,
   MapsStack,
+  ListStack,
   LinksStack,
   SettingsStack,
 });
